@@ -175,3 +175,103 @@ SELECT actor_id, first_name, last_name
 FROM actor
 WHERE NOT (first_name = 'KENNETH' OR (last_name = 'TEMPLE' AND actor_id < 100))
 LIMIT 501;
+
+SELECT *
+FROM actor
+WHERE first_name IN ("NICK", "JOHN", "JOE", "VIVEN0")
+LIMIT 501;
+
+
+SELECT *
+FROM actor
+WHERE actor_id NOT IN (1, 3, 5, 7)
+LIMIT 501;
+
+SELECT actor_id
+FROM actor
+WHERE last_name = "DEGENERES";
+
+SELECT *
+FROM actor
+WHERE first_name IN ("NICK", "JOHN", "JOE", "VIVEN0")
+    AND actor_id IN (SELECT actor_id
+                     FROM actor
+                     WHERE last_name = "DEGENERES")
+LIMIT 501;
+
+SELECT *
+FROM actor
+WHERE  actor_id BETWEEN 10 AND 20
+LIMIT 501;
+
+SELECT *
+FROM actor
+WHERE  actor_id NOT BETWEEN 10 AND 20
+LIMIT 501;
+
+SELECT *
+FROM actor
+WHERE first_name LIKE 'A%'
+LIMIT 501;
+
+SELECT *
+FROM actor
+WHERE first_name LIKE 'AL%'
+LIMIT 501;
+
+SELECT *
+FROM actor
+WHERE first_name LIKE 'A__E'
+LIMIT 501;
+
+SELECT *
+FROM actor
+WHERE first_name LIKE 'A__E%'
+LIMIT 501;
+
+SELECT *
+FROM actor
+WHERE first_name LIKE 'A%E%'
+LIMIT 501;
+
+SELECT *
+FROM actor
+WHERE first_name NOT LIKE 'A%' AND first_name NOT LIKE '%A'
+LIMIT 501;
+
+
+SELECT *
+FROM actor
+WHERE (first_name LIKE 'A%' OR first_name NOT LIKE '%A')
+LIMIT 501;
+
+SELECT *
+FROM address
+LIMIT 501;
+
+SELECT *
+FROM address
+LIMIT 5;
+
+SELECT *
+FROM address
+LIMIT 5 OFFSET 10;
+
+SELECT CONCAT(first_name, " ", last_name) AS FullName
+FROM actor
+ORDER BY FullName
+LIMIT 500;
+
+# To jest nie wydajne dwie kolumny
+SELECT CONCAT(first_name, " ", last_name)
+FROM actor
+ORDER BY CONCAT(first_name, " ", last_name)
+LIMIT 500;
+
+SELECT district, postal_code
+FROM address
+ORDER BY district, postal_code DESC
+LIMIT 501;
+
+
+
