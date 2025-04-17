@@ -12,8 +12,8 @@ FROM actor;
 SELECT *
 FROM vw_all_actor;
 
-# zastosowania widoków
-# 1. uproszczenie zapytań simplified queries
+-- zastosowania widoków
+-- 1. uproszczenie zapytań simplified queries
 
 CREATE VIEW customer_payment
 AS

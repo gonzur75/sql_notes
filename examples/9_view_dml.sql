@@ -8,22 +8,22 @@ AS
 SELECT *
 FROM language;
 
-#READ
+-- READ
 SELECT *
 FROM dml_operations
 LIMIT 500;
 
-# CREATE
+-- CREATE
 INSERT INTO dml_operations(name, last_update)
 VALUES ('Hindi' , '2025-04-13 00:00:00');
 
-# UPDATE
+-- UPDATE
 
 UPDATE dml_operations
 SET name = 'Polish'
 WHERE language_id = 7;
 
-# DELETE
+-- DELETE
 DELETE FROM dml_operations
 WHERE language_id = 7;
 

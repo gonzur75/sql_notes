@@ -143,5 +143,5 @@ SELECT ct.customer_id,
          WHERE ren.customer_id = ct.customer_id) AS rental_count
 FROM customer as ct
 WHERE ct.customer_id IN (SELECT ren.customer_id
-                         FROM rental ren);S
+                         FROM rental ren);
 

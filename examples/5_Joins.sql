@@ -45,7 +45,8 @@ LIMIT 501;
 SELECT *
 FROM table2
 LIMIT 501;
-#default join = inner
+
+-- default join = inner
 SELECT *
 FROM table1 AS t1
          JOIN table2 AS t2 ON t1.ID = t2.ID;
@@ -76,10 +77,12 @@ FROM table1 AS t1
 SELECT *
 FROM table1 AS t1
          RIGHT JOIN table2 AS t2 ON t1.ID = t2.ID;
-# full outer join
+
+-- full outer join
 SELECT *
 FROM table1 AS t1
          LEFT JOIN table2 AS t2 ON t1.ID = t2.ID
+
 UNION
 SELECT *
 FROM table1 AS t1
@@ -126,13 +129,14 @@ SELECT e1.Name AS EmploeyyName, e2.Name AS ManagerName
 FROM Employee AS e1
 INNER JOIN Employee AS e2 ON e1.Manager = e2.EmployeeID;
 
+-- funkcja IFNULL podmienia NULL na defaultowy tekst
 SELECT e1.Name AS EmploeyyName,IFNULL(e2.Name, 'Top Manager') AS ManagerName
 FROM Employee AS e1
 LEFT JOIN Employee AS e2 ON e1.Manager = e2.EmployeeID;
 
 
 
-# collation settings
+-- collation settings
 selECt cOuNT(*)
 FROM table2
 WHERE ValuE = 'First'

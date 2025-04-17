@@ -1,16 +1,13 @@
 SELECT *
 FROM language LIMIT 501;
 
-DELIMITER
-//
+DELIMITER//
 
 CREATE PROCEDURE GetLanguages()
 BEGIN
 SELECT *
 FROM language;
 END
-//
-
 DELIMITER ;
 
 CALL GetLanguages();
