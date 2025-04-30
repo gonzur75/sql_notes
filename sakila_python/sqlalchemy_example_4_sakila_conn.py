@@ -1,12 +1,15 @@
 from sqlalchemy import create_engine, MetaData, select, URL
 import os, urllib
+from dotenv import load_dotenv
+
+load_dotenv() # = os.path.join(os.path.dirname(__file__), '.env')
 
 url_object = URL.create(drivername='mysql+pymysql',
-                        username="user",
-                        password="password",
-                        host="localhost",
-                        port=3306,
-                        database="sakila"
+                        username=os.getenv('DB_USER'),
+                        password=os.getenv('DB_PASSWORD'),
+                        host=os.getenv('DB_HOST') ,
+                        port=os.getenv('DB_PORT'),
+                        database=os.getenv('DB_NAME')
 
                         )
 # connection_string = f'mysql+pymysql://user:password@localhost:3306/sakila?charset=utf8'
